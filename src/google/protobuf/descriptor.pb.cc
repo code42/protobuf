@@ -331,13 +331,14 @@ void protobuf_AssignDesc_google_2fprotobuf_2fdescriptor_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(MessageOptions));
   FieldOptions_descriptor_ = file->message_type(11);
-  static const int FieldOptions_offsets_[7] = {
+  static const int FieldOptions_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, ctype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, packed_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, lazy_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, deprecated_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, experimental_map_key_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, weak_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, redacted_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldOptions, uninterpreted_option_),
   };
   FieldOptions_reflection_ =
@@ -674,41 +675,41 @@ void protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() {
     "criptor_accessor\030\002 \001(\010:\005false\022\031\n\ndepreca"
     "ted\030\003 \001(\010:\005false\022C\n\024uninterpreted_option"
     "\030\347\007 \003(\0132$.google.protobuf.UninterpretedO"
-    "ption*\t\010\350\007\020\200\200\200\200\002\"\276\002\n\014FieldOptions\022:\n\005cty"
+    "ption*\t\010\350\007\020\200\200\200\200\002\"\327\002\n\014FieldOptions\022:\n\005cty"
     "pe\030\001 \001(\0162#.google.protobuf.FieldOptions."
     "CType:\006STRING\022\016\n\006packed\030\002 \001(\010\022\023\n\004lazy\030\005 "
     "\001(\010:\005false\022\031\n\ndeprecated\030\003 \001(\010:\005false\022\034\n"
     "\024experimental_map_key\030\t \001(\t\022\023\n\004weak\030\n \001("
-    "\010:\005false\022C\n\024uninterpreted_option\030\347\007 \003(\0132"
-    "$.google.protobuf.UninterpretedOption\"/\n"
-    "\005CType\022\n\n\006STRING\020\000\022\010\n\004CORD\020\001\022\020\n\014STRING_P"
-    "IECE\020\002*\t\010\350\007\020\200\200\200\200\002\"\215\001\n\013EnumOptions\022\023\n\013all"
-    "ow_alias\030\002 \001(\010\022\031\n\ndeprecated\030\003 \001(\010:\005fals"
-    "e\022C\n\024uninterpreted_option\030\347\007 \003(\0132$.googl"
-    "e.protobuf.UninterpretedOption*\t\010\350\007\020\200\200\200\200"
-    "\002\"}\n\020EnumValueOptions\022\031\n\ndeprecated\030\001 \001("
-    "\010:\005false\022C\n\024uninterpreted_option\030\347\007 \003(\0132"
-    "$.google.protobuf.UninterpretedOption*\t\010"
-    "\350\007\020\200\200\200\200\002\"{\n\016ServiceOptions\022\031\n\ndeprecated"
-    "\030! \001(\010:\005false\022C\n\024uninterpreted_option\030\347\007"
-    " \003(\0132$.google.protobuf.UninterpretedOpti"
-    "on*\t\010\350\007\020\200\200\200\200\002\"z\n\rMethodOptions\022\031\n\ndeprec"
-    "ated\030! \001(\010:\005false\022C\n\024uninterpreted_optio"
-    "n\030\347\007 \003(\0132$.google.protobuf.Uninterpreted"
-    "Option*\t\010\350\007\020\200\200\200\200\002\"\236\002\n\023UninterpretedOptio"
-    "n\022;\n\004name\030\002 \003(\0132-.google.protobuf.Uninte"
-    "rpretedOption.NamePart\022\030\n\020identifier_val"
-    "ue\030\003 \001(\t\022\032\n\022positive_int_value\030\004 \001(\004\022\032\n\022"
-    "negative_int_value\030\005 \001(\003\022\024\n\014double_value"
-    "\030\006 \001(\001\022\024\n\014string_value\030\007 \001(\014\022\027\n\017aggregat"
-    "e_value\030\010 \001(\t\0323\n\010NamePart\022\021\n\tname_part\030\001"
-    " \002(\t\022\024\n\014is_extension\030\002 \002(\010\"\261\001\n\016SourceCod"
-    "eInfo\022:\n\010location\030\001 \003(\0132(.google.protobu"
-    "f.SourceCodeInfo.Location\032c\n\010Location\022\020\n"
-    "\004path\030\001 \003(\005B\002\020\001\022\020\n\004span\030\002 \003(\005B\002\020\001\022\030\n\020lea"
-    "ding_comments\030\003 \001(\t\022\031\n\021trailing_comments"
-    "\030\004 \001(\tB)\n\023com.google.protobufB\020Descripto"
-    "rProtosH\001", 4449);
+    "\010:\005false\022\027\n\010redacted\030\013 \001(\010:\005false\022C\n\024uni"
+    "nterpreted_option\030\347\007 \003(\0132$.google.protob"
+    "uf.UninterpretedOption\"/\n\005CType\022\n\n\006STRIN"
+    "G\020\000\022\010\n\004CORD\020\001\022\020\n\014STRING_PIECE\020\002*\t\010\350\007\020\200\200\200"
+    "\200\002\"\215\001\n\013EnumOptions\022\023\n\013allow_alias\030\002 \001(\010\022"
+    "\031\n\ndeprecated\030\003 \001(\010:\005false\022C\n\024uninterpre"
+    "ted_option\030\347\007 \003(\0132$.google.protobuf.Unin"
+    "terpretedOption*\t\010\350\007\020\200\200\200\200\002\"}\n\020EnumValueO"
+    "ptions\022\031\n\ndeprecated\030\001 \001(\010:\005false\022C\n\024uni"
+    "nterpreted_option\030\347\007 \003(\0132$.google.protob"
+    "uf.UninterpretedOption*\t\010\350\007\020\200\200\200\200\002\"{\n\016Ser"
+    "viceOptions\022\031\n\ndeprecated\030! \001(\010:\005false\022C"
+    "\n\024uninterpreted_option\030\347\007 \003(\0132$.google.p"
+    "rotobuf.UninterpretedOption*\t\010\350\007\020\200\200\200\200\002\"z"
+    "\n\rMethodOptions\022\031\n\ndeprecated\030! \001(\010:\005fal"
+    "se\022C\n\024uninterpreted_option\030\347\007 \003(\0132$.goog"
+    "le.protobuf.UninterpretedOption*\t\010\350\007\020\200\200\200"
+    "\200\002\"\236\002\n\023UninterpretedOption\022;\n\004name\030\002 \003(\013"
+    "2-.google.protobuf.UninterpretedOption.N"
+    "amePart\022\030\n\020identifier_value\030\003 \001(\t\022\032\n\022pos"
+    "itive_int_value\030\004 \001(\004\022\032\n\022negative_int_va"
+    "lue\030\005 \001(\003\022\024\n\014double_value\030\006 \001(\001\022\024\n\014strin"
+    "g_value\030\007 \001(\014\022\027\n\017aggregate_value\030\010 \001(\t\0323"
+    "\n\010NamePart\022\021\n\tname_part\030\001 \002(\t\022\024\n\014is_exte"
+    "nsion\030\002 \002(\010\"\261\001\n\016SourceCodeInfo\022:\n\010locati"
+    "on\030\001 \003(\0132(.google.protobuf.SourceCodeInf"
+    "o.Location\032c\n\010Location\022\020\n\004path\030\001 \003(\005B\002\020\001"
+    "\022\020\n\004span\030\002 \003(\005B\002\020\001\022\030\n\020leading_comments\030\003"
+    " \001(\t\022\031\n\021trailing_comments\030\004 \001(\tB)\n\023com.g"
+    "oogle.protobufB\020DescriptorProtosH\001", 4474);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "google/protobuf/descriptor.proto", &protobuf_RegisterTypes);
   FileDescriptorSet::default_instance_ = new FileDescriptorSet();
@@ -6012,6 +6013,7 @@ const int FieldOptions::kLazyFieldNumber;
 const int FieldOptions::kDeprecatedFieldNumber;
 const int FieldOptions::kExperimentalMapKeyFieldNumber;
 const int FieldOptions::kWeakFieldNumber;
+const int FieldOptions::kRedactedFieldNumber;
 const int FieldOptions::kUninterpretedOptionFieldNumber;
 #endif  // !_MSC_VER
 
@@ -6040,6 +6042,7 @@ void FieldOptions::SharedCtor() {
   deprecated_ = false;
   experimental_map_key_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   weak_ = false;
+  redacted_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6089,13 +6092,14 @@ void FieldOptions::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 63) {
+  if (_has_bits_[0 / 32] & 127) {
     ZR_(ctype_, weak_);
     if (has_experimental_map_key()) {
       if (experimental_map_key_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         experimental_map_key_->clear();
       }
     }
+    redacted_ = false;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -6208,6 +6212,21 @@ bool FieldOptions::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(88)) goto parse_redacted;
+        break;
+      }
+
+      // optional bool redacted = 11 [default = false];
+      case 11: {
+        if (tag == 88) {
+         parse_redacted:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &redacted_)));
+          set_has_redacted();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectTag(7994)) goto parse_uninterpreted_option;
         break;
       }
@@ -6292,6 +6311,11 @@ void FieldOptions::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->weak(), output);
   }
 
+  // optional bool redacted = 11 [default = false];
+  if (has_redacted()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(11, this->redacted(), output);
+  }
+
   // repeated .google.protobuf.UninterpretedOption uninterpreted_option = 999;
   for (int i = 0; i < this->uninterpreted_option_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -6349,6 +6373,11 @@ void FieldOptions::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->weak(), target);
   }
 
+  // optional bool redacted = 11 [default = false];
+  if (has_redacted()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(11, this->redacted(), target);
+  }
+
   // repeated .google.protobuf.UninterpretedOption uninterpreted_option = 999;
   for (int i = 0; i < this->uninterpreted_option_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -6402,6 +6431,11 @@ int FieldOptions::ByteSize() const {
 
     // optional bool weak = 10 [default = false];
     if (has_weak()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool redacted = 11 [default = false];
+    if (has_redacted()) {
       total_size += 1 + 1;
     }
 
@@ -6461,6 +6495,9 @@ void FieldOptions::MergeFrom(const FieldOptions& from) {
     if (from.has_weak()) {
       set_weak(from.weak());
     }
+    if (from.has_redacted()) {
+      set_redacted(from.redacted());
+    }
   }
   _extensions_.MergeFrom(from._extensions_);
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -6493,6 +6530,7 @@ void FieldOptions::Swap(FieldOptions* other) {
     std::swap(deprecated_, other->deprecated_);
     std::swap(experimental_map_key_, other->experimental_map_key_);
     std::swap(weak_, other->weak_);
+    std::swap(redacted_, other->redacted_);
     uninterpreted_option_.Swap(&other->uninterpreted_option_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

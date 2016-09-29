@@ -65,6 +65,8 @@ public final class TextFormat {
   private static final Printer UNICODE_PRINTER =
       (new Printer()).setEscapeNonAscii(false);
 
+  static final String REDACTED_TEXT = "<redacted>";
+
   /**
    * Outputs a textual representation of the Protocol Message supplied into
    * the parameter output. (This representation is the new version of the
@@ -372,6 +374,12 @@ public final class TextFormat {
                                  final Object value,
                                  final TextGenerator generator)
                                  throws IOException {
+      // Fields containing sensitive information should not be printed out.
+      if (field.getOptions().getRedacted()) {
+        generator.print(REDACTED_TEXT);
+        return;
+      }
+
       switch (field.getType()) {
         case INT32:
         case SINT32:

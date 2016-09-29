@@ -1974,6 +1974,13 @@ class LIBPROTOBUF_EXPORT FieldOptions : public ::google::protobuf::Message {
   inline bool weak() const;
   inline void set_weak(bool value);
 
+  // optional bool redacted = 11 [default = false];
+  inline bool has_redacted() const;
+  inline void clear_redacted();
+  static const int kRedactedFieldNumber = 11;
+  inline bool redacted() const;
+  inline void set_redacted(bool value);
+
   // repeated .google.protobuf.UninterpretedOption uninterpreted_option = 999;
   inline int uninterpreted_option_size() const;
   inline void clear_uninterpreted_option();
@@ -2001,6 +2008,8 @@ class LIBPROTOBUF_EXPORT FieldOptions : public ::google::protobuf::Message {
   inline void clear_has_experimental_map_key();
   inline void set_has_weak();
   inline void clear_has_weak();
+  inline void set_has_redacted();
+  inline void clear_has_redacted();
 
   ::google::protobuf::internal::ExtensionSet _extensions_;
 
@@ -2015,6 +2024,7 @@ class LIBPROTOBUF_EXPORT FieldOptions : public ::google::protobuf::Message {
   bool weak_;
   ::std::string* experimental_map_key_;
   ::google::protobuf::RepeatedPtrField< ::google::protobuf::UninterpretedOption > uninterpreted_option_;
+  bool redacted_;
   friend void LIBPROTOBUF_EXPORT protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto();
   friend void protobuf_AssignDesc_google_2fprotobuf_2fdescriptor_2eproto();
   friend void protobuf_ShutdownFile_google_2fprotobuf_2fdescriptor_2eproto();
@@ -5745,6 +5755,30 @@ inline void FieldOptions::set_weak(bool value) {
   set_has_weak();
   weak_ = value;
   // @@protoc_insertion_point(field_set:google.protobuf.FieldOptions.weak)
+}
+
+// optional bool redacted = 11 [default = false];
+inline bool FieldOptions::has_redacted() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void FieldOptions::set_has_redacted() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void FieldOptions::clear_has_redacted() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void FieldOptions::clear_redacted() {
+  redacted_ = false;
+  clear_has_redacted();
+}
+inline bool FieldOptions::redacted() const {
+  // @@protoc_insertion_point(field_get:google.protobuf.FieldOptions.redacted)
+  return redacted_;
+}
+inline void FieldOptions::set_redacted(bool value) {
+  set_has_redacted();
+  redacted_ = value;
+  // @@protoc_insertion_point(field_set:google.protobuf.FieldOptions.redacted)
 }
 
 // repeated .google.protobuf.UninterpretedOption uninterpreted_option = 999;

@@ -188,6 +188,15 @@ message TestDeprecatedFields {
   optional int32 deprecated_int32 = 1 [deprecated=true];
 }
 
+message TestRedactedFields {
+  optional  int32 redacted_int32  = 1 [redacted=true];
+  optional  float redacted_float  = 2 [redacted=true];
+  optional double redacted_double = 3 [redacted=true];
+  optional   bool redacted_bool   = 4 [redacted=true];
+  optional string redacted_string = 5 [redacted=true];
+  optional  bytes redacted_bytes  = 6 [redacted=true];
+}
+
 // Define these after TestAllTypes to make sure the compiler can handle
 // that.
 message ForeignMessage {
