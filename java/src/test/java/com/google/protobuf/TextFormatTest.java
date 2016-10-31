@@ -41,6 +41,7 @@ import protobuf_unittest.UnittestProto.TestAllTypes;
 import protobuf_unittest.UnittestProto.TestAllTypes.NestedMessage;
 import protobuf_unittest.UnittestProto.TestEmptyMessage;
 import protobuf_unittest.UnittestProto.TestOneof2;
+import protobuf_unittest.UnittestProto.TestRedactedFields;
 
 import junit.framework.TestCase;
 
@@ -218,6 +219,26 @@ public class TextFormatTest extends TestCase {
       "15: 12379813812177893520\n" +
       "15: 0xabcd1234\n" +
       "15: 0xabcdef1234567890\n",
+      TextFormat.printToString(message));
+  }
+
+  public void testPrintRedactedFields() throws Exception {
+    TestRedactedFields message = TestRedactedFields.newBuilder()
+      .setRedactedInt32(1)
+      .setRedactedFloat(1)
+      .setRedactedDouble(1)
+      .setRedactedBool(true)
+      .setRedactedString("test string")
+      .setRedactedBytes(bytes("test bytes"))
+      .build();
+
+    assertEquals(
+      "redacted_int32: " + TextFormat.REDACTED_TEXT + "\n" +
+      "redacted_float: " + TextFormat.REDACTED_TEXT + "\n" +
+      "redacted_double: " + TextFormat.REDACTED_TEXT + "\n" +
+      "redacted_bool: " + TextFormat.REDACTED_TEXT + "\n" +
+      "redacted_string: " + TextFormat.REDACTED_TEXT + "\n" +
+      "redacted_bytes: " + TextFormat.REDACTED_TEXT + "\n",
       TextFormat.printToString(message));
   }
 
@@ -805,6 +826,16 @@ public class TextFormatTest extends TestCase {
         "repeated_uint64");
     assertPrintFieldValue("\"\\001\\002\\003\"",
         ByteString.copyFrom(new byte[] {1, 2, 3}), "repeated_bytes");
+  }
+
+  public void testPrintRedactedFieldValue() throws Exception {
+    final StringBuilder sb = new StringBuilder();
+    TextFormat.printFieldValue(
+        TestRedactedFields.getDescriptor().findFieldByName("redacted_string"),
+        "Secret",
+        sb);
+
+    assertEquals(TextFormat.REDACTED_TEXT, sb.toString());
   }
 
   private void assertPrintFieldValue(String expect, Object value,
